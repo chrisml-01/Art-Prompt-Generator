@@ -1,0 +1,85 @@
+:root{
+    --color-1: #182933;
+    --color-2: #1f4761;
+    --color-3: #ffa300;
+    --color-4: #ffc61a;
+}
+   
+body{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+
+    padding-top:5%;
+
+    background-color: var(--color-1);  
+}
+
+header h1{
+    color:var(--color-4);
+}
+
+h3 {
+    margin: 15px 0;
+}
+
+.prompt-words{
+    max-width: 400px;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    margin: 0 auto 25px auto;
+    font-size: 18px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.Word-theme {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.Word-theme.isRolling{
+    color: gray;
+}
+
+.btn-generate{
+    background-color: var(--color-2);
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    color: white;
+    padding:5px 20px;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.btn-generate:hover{
+    background-color: var(--color-3);
+}
+
+.color-palette{
+    width: 100%;
+    display: block;
+}
+
+.color-palette span{
+    width: 130px;
+    color: white;
+    padding: 5px;
+    display: inline-block;
+}
+
+.color-palette div {
+    padding: 3px;
+}
+
+.color-texts{
+    text-align: center;
+}
+
+.btn-again{
+    visibility: hidden;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Prompt Generator</title>
+    <link rel="stylesheet" href="assets/app.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <script src="assets/vendor.js" defer></script>
+    <script src="assets/app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Art Prompt Generator</h1>
+    </header>
+    <section id="prompt-box">
+        <div id="words" class="prompt-words">
+            <h3>Palette:</h3>
+            <span class="color-palette">
+                <div>
+                    <span id="color-1"></span>
+                </div>
+                <div>
+                    <span id="color-2"></span>
+                </div>
+                <div>
+                    <span id="color-3"></span>
+                </div>
+                <button type="button" id="try-again-color" class="btn-again">Try again?</button>
+            </span>
+            <h3>Topic: </h3>
+            <span id="word-theme" class="Word-Theme"></span>
+            <span id="word-theme2" class="Word-Theme"></span>
+            <span id="word-theme3" class="Word-Theme"></span>
+        </div>
+        <button type="button" id="generate-prompt" class="btn-generate">Give me a challenge!</button>
+    </section>
+    <!-- <footer>
+        © 2020 Chrism | Designed by Chrism.
+    </footer> -->
+</body>
+
+</html>
