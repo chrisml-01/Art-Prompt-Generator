@@ -12,7 +12,7 @@ body{
     text-align: center;
     font-family: 'Nunito', sans-serif;
 
-    padding-top:5%;
+    padding-top: 4%;
 
     background-color: var(--color-1);  
 }
@@ -23,22 +23,25 @@ header h1{
 
 h3 {
     margin: 15px 0;
+    display: inline-block;
 }
 
 .prompt-words{
     max-width: 400px;
     width: 100%;
-    padding: 20px 0 20px 0;
+    padding: 10px 0 20px 0;
     margin: 0 auto 25px auto;
     font-size: 18px;
     text-align: center;
     background-color: white;
     border-radius: 5px;
+    box-shadow: 5px 15px 10px #11212b;
 }
 
 .Word-theme {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
+    display: block;
 }
 
 .Word-theme.isRolling{
@@ -82,4 +85,37 @@ h3 {
 
 .btn-again{
     visibility: hidden;
+    width: 30px;
+    border: none;
+    background: none;
+    color: var(--color-3);
+
+}
+.theme-box{
+    display: block;
+}
+.theme-box input[type = "number"]{
+    width: 50px;
+
+}
+
+.user-input{
+    margin-left: 8px;
+    height: 25px;
+    width: 35px;
+}
+
+footer{
+    padding-top: 30px;
+    color: var(--color-4);
+}
+
+footer a {
+    text-decoration: none;  
+    color: var(--color-4);
+}
+
+footer a:hover{
+    color: var(--color-2);
+    text-decoration: underline;
 }

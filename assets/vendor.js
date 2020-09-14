@@ -1,8 +1,7 @@
 var colorPallete = document.getElementById('color-palette');
+var promptNumber = document.getElementById('prompt-number');
 
-var theme = document.getElementById('word-theme')
-var theme2 = document.getElementById('word-theme2')
-var theme3 = document.getElementById('word-theme3')
+var theme = document.getElementById('word-theme');
 
 var color1 = document.getElementById('color-1');
 var color2 = document.getElementById('color-2');

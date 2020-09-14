@@ -15,9 +15,15 @@
     <header>
         <h1>Art Prompt Generator</h1>
     </header>
+
     <section id="prompt-box">
-        <div id="words" class="prompt-words">
-            <h3>Palette:</h3>
+        <form id="words" class="prompt-words">
+            <h3>Palette: </h3>
+            <button type="button" id="try-again-color" class="btn-again">
+                <svg id="icon-button" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="redo" class="svg-inline--fa fa-redo fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor" d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z"></path>
+                </svg>
+            </button>
             <span class="color-palette">
                 <div>
                     <span id="color-1"></span>
@@ -28,18 +34,24 @@
                 <div>
                     <span id="color-3"></span>
                 </div>
-                <button type="button" id="try-again-color" class="btn-again">Try again?</button>
             </span>
-            <h3>Topic: </h3>
-            <span id="word-theme" class="Word-Theme"></span>
-            <span id="word-theme2" class="Word-Theme"></span>
-            <span id="word-theme3" class="Word-Theme"></span>
-        </div>
+            <span class="theme-box">
+                <h3>Topic(s):</h3>
+
+                <select id="prompt-number" class="user-input">
+                    <option>1</option>
+                    <option>3</option>
+                    <option>5</option>
+                </select>
+
+                <span id="word-theme" class="Word-Theme"></span>
+            </span>
+        </form>
         <button type="button" id="generate-prompt" class="btn-generate">Give me a challenge!</button>
     </section>
-    <!-- <footer>
-        © 2020 Chrism | Designed by Chrism.
-    </footer> -->
+    <footer>
+        © 2020 Chrism | Designed by <a href="https://www.instagram.com/chrismsshi/" target="_blank">Chrism.</a>
+    </footer>
 </body>
 
 </html>

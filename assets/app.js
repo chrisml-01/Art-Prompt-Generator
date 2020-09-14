@@ -647,21 +647,26 @@ const wordTheme = [
     "Distance",
     "Hands",
     "Mental Health",
+
 ];
-function pickElement(li){
+
+function getUserInput() {
+    return +(promptNumber.value);
+}
+
+function pickElement(li) {
     let i = Math.floor(Math.random() * li.length);
     return li[i];
 }
 
-
-function randomizeColors(){
+function randomizeColors() {
     let myColor, myColor2, myColor3;
-    
+
     myColor = pickElement(color);
     myColor2 = pickElement(color);
     myColor3 = pickElement(color);
 
-    if(myColor != myColor2 && myColor2 != myColor3 && myColor != myColor3){
+    if (myColor != myColor2 && myColor2 != myColor3 && myColor != myColor3) {
         color1.style.background = myColor;
         color2.style.background = myColor2;
         color3.style.background = myColor3;
@@ -669,35 +674,41 @@ function randomizeColors(){
         color1.innerText = myColor;
         color2.innerText = myColor2;
         color3.innerText = myColor3;
-
-        // console.log(`${myColor},${myColor2}, ${myColor3}`);
     }
-
 
 }
 
-function randomizeWords(currentWord){
-    if(currentWord === 0){
-        currentWord = 0;
-    } 
+function randomizeWords() {
+    const noOfPrompts = getUserInput();
+    let myTheme = [];
+    let allTheme = "";
 
-    if (currentWord <= 1){
-        theme.innerText = pickElement(wordTheme);
+    for (let i = 1; i <= noOfPrompts; i++) {
+        let newTheme = pickElement(wordTheme);
+        myTheme.push(`${i}: ${newTheme} \n`);
     }
+
+    for (let i = 0; i < myTheme.length; i++) {
+        allTheme += myTheme[i];
+    }
+
+    theme.innerText = allTheme;
 }
 
-function generate(){
+function generate() {
     let currentColor = 0;
     let currentWord = 0;
     //set button's visibility to hidden and disable it while rolling
     btnGenerate.disabled = true;
     btnGenerate.style.visibility = "collapse";
+    promptNumber.style.visibility = "collapse";
+    btnTryAgain.style.visibility = "hidden";
     //set the color to gray while rolling
     theme.className = "Word-theme isRolling";
 
     const time = setInterval(function(){
-        randomizeColors(currentColor);
-        randomizeWords(currentWord);
+        randomizeColors();
+        randomizeWords();
     }, 80);
 
     const wordTime = setInterval(function(){
@@ -711,24 +722,25 @@ function generate(){
             btnGenerate.innerText = "Try again!"
             btnGenerate.style.visibility = "visible";
             btnTryAgain.style.visibility = "visible";
+            promptNumber.style.visibility = "visible";
         }
     }, 1500);   
 }
 
-function tryAgain(){
+function tryAgain() {
     let currentColor = 0;
     //set button's visibility to hidden and disable it while rolling
     btnGenerate.disabled = true;
     btnTryAgain.disabled = true;
-    btnTryAgain.style.visibility = "collapse";
-    btnGenerate.style.visibility = "collapse";
-    const time = setInterval(function(){
-        randomizeColors(currentColor);
+    btnTryAgain.style.visibility = "hidden";
+    btnGenerate.style.visibility = "hidden";
+    const time = setInterval(function () {
+        randomizeColors();
     }, 80);
 
-    const wordTime = setInterval(function(){
+    const wordTime = setInterval(function () {
         currentColor += 1;
-        if(currentColor >= 4){
+        if (currentColor >= 4) {
             clearInterval(time);
             clearInterval(wordTime);
             btnGenerate.disabled = false;
