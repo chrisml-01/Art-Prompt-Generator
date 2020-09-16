@@ -4,21 +4,41 @@
     --color-3: #ffa300;
     --color-4: #ffc61a;
 }
-   
+html{
+    height: 100%;
+}
 body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
+    background-color: var(--color-1);  
+}  
+.wrapper{
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    /* width: 500px; */
+    height: 100%;
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Pangolin', cursive;
 
     padding-top: 4%;
 
-    background-color: var(--color-1);  
+    background-image: url("images/stars-2.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+           
 }
 
 header h1{
     color:var(--color-4);
+}
+
+#title-image {
+    width: 350px;
+    height: auto;
+    padding-bottom: 10px;    
 }
 
 h3 {
@@ -27,11 +47,11 @@ h3 {
 }
 
 .prompt-words{
-    max-width: 400px;
+    max-width: 450px;
     width: 100%;
     padding: 10px 0 20px 0;
     margin: 0 auto 25px auto;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     background-color: white;
     border-radius: 5px;
@@ -50,8 +70,8 @@ h3 {
 
 .btn-generate{
     background-color: var(--color-2);
-    font-family: 'Nunito', sans-serif;
-    font-size: 18px;
+    font-family: 'Pangolin', cursive;
+    font-size: 20px;
     color: white;
     padding:5px 20px;
     border-radius: 5px;
@@ -107,6 +127,7 @@ h3 {
 
 footer{
     padding-top: 30px;
+    font-size: 18px;
     color: var(--color-4);
 }
 
