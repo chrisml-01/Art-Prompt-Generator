@@ -699,10 +699,10 @@ function generate() {
     let currentColor = 0;
     let currentWord = 0;
     //set button's visibility to hidden and disable it while rolling
-    btnGenerate.disabled = true;
-    btnGenerate.style.visibility = "collapse";
-    promptNumber.style.visibility = "collapse";
+    btnGenerate.style.visibility = "hidden";
+    promptNumber.style.visibility = "hidden";
     btnTryAgain.style.visibility = "hidden";
+    btnTryAgainTheme.style.visibility = "hidden";
     //set the color to gray while rolling
     theme.className = "Word-theme isRolling";
 
@@ -718,22 +718,22 @@ function generate() {
             clearInterval(time);
             clearInterval(wordTime);
             theme.className = "Word-theme";
-            btnGenerate.disabled = false;
             btnGenerate.innerText = "Try again!"
             btnGenerate.style.visibility = "visible";
             btnTryAgain.style.visibility = "visible";
             promptNumber.style.visibility = "visible";
+            btnTryAgainTheme.style.visibility = "visible";
         }
     }, 1500);   
 }
 
-function tryAgain() {
+function tryAgainColor() {
     let currentColor = 0;
-    //set button's visibility to hidden and disable it while rolling
-    btnGenerate.disabled = true;
-    btnTryAgain.disabled = true;
+    //set button's visibility to hidden while rolling
     btnTryAgain.style.visibility = "hidden";
     btnGenerate.style.visibility = "hidden";
+    btnTryAgainTheme.style.visibility = "hidden";
+    promptNumber.style.visibility = "hidden";
     const time = setInterval(function () {
         randomizeColors();
     }, 80);
@@ -743,14 +743,41 @@ function tryAgain() {
         if (currentColor >= 4) {
             clearInterval(time);
             clearInterval(wordTime);
-            btnGenerate.disabled = false;
             btnGenerate.innerText = "Try again!"
             btnGenerate.style.visibility = "visible";
-            btnTryAgain.disabled = false;
             btnTryAgain.style.visibility = "visible";
+            btnTryAgainTheme.style.visibility = "visible";
+            promptNumber.style.visibility = "visible";
+            
         }
     }, 800);
 }
 
-btnTryAgain.addEventListener("click", tryAgain);
+function tryAgainTheme() {
+    let currentColor = 0;
+    //set button's visibility to hidden while rolling
+    btnTryAgain.style.visibility = "hidden";
+    btnTryAgainTheme.style.visibility = "hidden";
+    btnGenerate.style.visibility = "hidden";
+    promptNumber.style.visibility = "hidden";
+    const time = setInterval(function () {
+        randomizeWords();
+    }, 80);
+
+    const wordTime = setInterval(function () {
+        currentColor += 1;
+        if (currentColor >= 4) {
+            clearInterval(time);
+            clearInterval(wordTime);
+            btnGenerate.innerText = "Try again!"
+            btnGenerate.style.visibility = "visible";
+            btnTryAgain.style.visibility = "visible";
+            btnTryAgainTheme.style.visibility = "visible";
+            promptNumber.style.visibility = "visible";
+        }
+    }, 800);
+}
+
+btnTryAgain.addEventListener("click", tryAgainColor);
 btnGenerate.addEventListener("click", generate);
+btnTryAgainTheme.addEventListener("click", tryAgainTheme);

@@ -13,3 +13,4 @@ var c3Text = document.getElementById('color-3-text');
 
 var btnGenerate = document.getElementById('generate-prompt');
 var btnTryAgain = document.getElementById('try-again-color');
+var btnTryAgainTheme = document.getElementById('try-again-theme');
