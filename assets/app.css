@@ -14,6 +14,8 @@ body{
 
     background-color: var(--color-1);  
 }  
+
+
 .wrapper{
     margin-left: auto;
     margin-right: auto;
@@ -26,6 +28,17 @@ body{
     background-image: url("images/stars-2.png");
     background-repeat: no-repeat;
     background-size: cover;        
+}
+
+.site-wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    height: 90vh;
 }
 
 header h1{
